@@ -2,26 +2,13 @@
 
 namespace Lull\PizzaStore;
 
-use Lull\PizzaStore\Pizzas\CheesePizza;
-use Lull\PizzaStore\Pizzas\PepperoniPizza;
-use Lull\PizzaStore\Pizzas\VeggiePizza;
-
 class PizzaStore
-{
-    public function createPizza(string $type): ?Pizza
+{	
+	public string $type;
+    public function createPizza(string $type): string
     {
-        switch ($type) {
-            case 'cheese':
-                return new CheesePizza();
-            case 'pepperoni':
-                return new PepperoniPizza();
-            case 'veggie':
-                return new VeggiePizza();
-            default:
-                return null;
-        }
+       return $this->type;
     }
-
     public function orderPizza(string $type): void
     {
         $pizza = $this->createPizza($type);
